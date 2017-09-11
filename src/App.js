@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React, {Component} from 'react';
 
 // Components
 import EditToggle from './components/EditToggle';
@@ -13,7 +11,9 @@ class App extends Component {
   constructor(){
   super();
    // constructor
-  
+  //things we need to keep track of on state. 
+  //color, font size, font-family, allowedits or not.
+  //
 
     this.state = {
       fontColor: 'black',
@@ -22,7 +22,7 @@ class App extends Component {
       allowEdit: true
     }
 
-    this.updateColor =this.updateColor.bind(this)
+    this.updateColor =this.updateColor.bind(this)//binding prevents this keyword from being undefined.
     this.updateSize =this.updateSize.bind(this)
     this.updateFamily =this.updateFamily.bind(this)
     this.updateEditStatus =this.updateEditStatus.bind(this)
@@ -60,6 +60,7 @@ this.setState({
     return (
       <div>
         <div className="headerBar">
+          
           <EditToggle update={ this.updateEditStatus } />
           <ColorChanger update={ this.updateColor } allowEdit={ this.state.allowEdit } />
           <SizeChanger update={ this.updateSize } allowEdit={ this.state.allowEdit } />

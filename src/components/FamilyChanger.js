@@ -11,9 +11,9 @@ export default class FamilyChanger extends Component {
 
 
   // componentWillReceiveProps
-componentWillRecieveProps(newProps){
+componentWillReceiveProps(props){
   this.setState({
-    allowEdit: newProps.allowEdit
+    allowEdit: props.allowEdit
   })
 }
 
